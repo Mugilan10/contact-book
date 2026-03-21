@@ -52,8 +52,11 @@ while True:
         name = input("Enter name: ")
         phone = input("Enter phone number: ")
         email = input("Enter your email: ")
-        add_contact(name, phone, email)
-        save_contacts()
+        if phone.isdigit() and len(phone) == 10:
+            add_contact(name, phone, email)
+            save_contacts()
+        else:
+            print("Invalid phone number")
 
     elif(choice == "2"):
         delete_name = input("Enter name of contact to delete: ")
